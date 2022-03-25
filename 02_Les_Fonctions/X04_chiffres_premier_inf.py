@@ -1,0 +1,1 @@
+#Créer une fonction qui prend en paramètre un chiffre et qui affiche tout les chiffres premiers inférieur au paramètre

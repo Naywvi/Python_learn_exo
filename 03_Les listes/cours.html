@@ -1,0 +1,1237 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <meta name="author" content="Patrick Fuchs et Pierre Poulain">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>4. Listes - Cours de Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-104737126-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-listes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Cours de Python" class="md-header-nav__button md-logo" aria-label="Cours de Python">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Cours de Python
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              4. Listes
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours de Python" class="md-nav__button md-logo" aria-label="Cours de Python">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cours de Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../00_avant_propos/" class="md-nav__link">
+      Avant propos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    <label class="md-nav__link" for="nav-2">
+      Chapitres
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Chapitres" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Chapitres
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_introduction/" class="md-nav__link">
+      1. Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_variables/" class="md-nav__link">
+      2. Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_affichage/" class="md-nav__link">
+      3. Affichage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4. Listes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      4. Listes
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-definition" class="md-nav__link">
+    4.1 Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-utilisation" class="md-nav__link">
+    4.2 Utilisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-operation-sur-les-listes" class="md-nav__link">
+    4.3 Opération sur les listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-indicage-negatif" class="md-nav__link">
+    4.4 Indiçage négatif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-tranches" class="md-nav__link">
+    4.5 Tranches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-fonction-len" class="md-nav__link">
+    4.6 Fonction len()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-les-fonctions-range-et-list" class="md-nav__link">
+    4.7 Les fonctions range() et list()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-listes-de-listes" class="md-nav__link">
+    4.8 Listes de listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-minimum-maximum-et-somme-dune-liste" class="md-nav__link">
+    4.9 Minimum, maximum et somme d'une liste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-exercices" class="md-nav__link">
+    4.10 Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="4.10 Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4101-jours-de-la-semaine" class="md-nav__link">
+    4.10.1 Jours de la semaine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4102-saisons" class="md-nav__link">
+    4.10.2 Saisons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4103-table-de-multiplication-par-9" class="md-nav__link">
+    4.10.3 Table de multiplication par 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4104-nombres-pairs" class="md-nav__link">
+    4.10.4 Nombres pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05_boucles_comparaisons/" class="md-nav__link">
+      5. Boucles et comparaisons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06_tests/" class="md-nav__link">
+      6. Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_fichiers/" class="md-nav__link">
+      7. Fichiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08_modules/" class="md-nav__link">
+      8. Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09_fonctions/" class="md-nav__link">
+      9. Fonctions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10_plus_sur_les_chaines_de_caracteres/" class="md-nav__link">
+      10. Plus sur les chaînes de caractères
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_plus_sur_les_listes/" class="md-nav__link">
+      11. Plus sur les listes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../12_plus_sur_les_fonctions/" class="md-nav__link">
+      12. Plus sur les fonctions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../13_dictionnaires_tuples_sets/" class="md-nav__link">
+      13. Dictionnaires, tuples et sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../14_creation_modules/" class="md-nav__link">
+      14. Création de modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../15_bonnes_pratiques/" class="md-nav__link">
+      15. Bonnes pratiques en programmation Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../16_expressions_regulieres/" class="md-nav__link">
+      16. Expressions régulières
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../17_modules_interet_bioinfo/" class="md-nav__link">
+      17. Quelques modules d'intérêt en bioinformatique
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../18_jupyter/" class="md-nav__link">
+      18. Jupyter et ses notebooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../19_avoir_la_classe_avec_les_objets/" class="md-nav__link">
+      19. Avoir la classe avec les objets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20_tkinter/" class="md-nav__link">
+      20. Fenêtres graphiques et Tkinter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../21_remarques_complementaires/" class="md-nav__link">
+      21. Remarques complémentaires
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../22_mini_projets/" class="md-nav__link">
+      22. Mini-projets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <label class="md-nav__link" for="nav-3">
+      Annexes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Annexes" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Annexes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../annexe_formats_fichiers/" class="md-nav__link">
+      A. Quelques formats de données rencontrés en biologie
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../annexe_install_python/" class="md-nav__link">
+      B. Installation de Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-definition" class="md-nav__link">
+    4.1 Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-utilisation" class="md-nav__link">
+    4.2 Utilisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-operation-sur-les-listes" class="md-nav__link">
+    4.3 Opération sur les listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-indicage-negatif" class="md-nav__link">
+    4.4 Indiçage négatif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-tranches" class="md-nav__link">
+    4.5 Tranches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-fonction-len" class="md-nav__link">
+    4.6 Fonction len()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-les-fonctions-range-et-list" class="md-nav__link">
+    4.7 Les fonctions range() et list()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-listes-de-listes" class="md-nav__link">
+    4.8 Listes de listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-minimum-maximum-et-somme-dune-liste" class="md-nav__link">
+    4.9 Minimum, maximum et somme d'une liste
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-exercices" class="md-nav__link">
+    4.10 Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="4.10 Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4101-jours-de-la-semaine" class="md-nav__link">
+    4.10.1 Jours de la semaine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4102-saisons" class="md-nav__link">
+    4.10.2 Saisons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4103-table-de-multiplication-par-9" class="md-nav__link">
+    4.10.3 Table de multiplication par 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4104-nombres-pairs" class="md-nav__link">
+    4.10.4 Nombres pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="4-listes">4 Listes</h1>
+<h2 id="41-definition">4.1 Définition</h2>
+<p>Une <strong>liste</strong> est une structure de données qui contient une série de valeurs. Python autorise la construction de liste contenant des valeurs de types différents (par exemple entier et chaîne de caractères), ce qui leur confère une grande flexibilité. Une liste est déclarée par une série de valeurs (n'oubliez pas les guillemets, simples ou doubles, s'il s'agit de chaînes de caractères) séparées par des <strong>virgules</strong>, et le tout encadré par des <strong>crochets</strong>. En voici quelques exemples :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tailles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixte</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tailles</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mixte</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Lorsque l'on affiche une liste, Python la restitue telle qu'elle a été saisie.</p>
+<h2 id="42-utilisation">4.2 Utilisation</h2>
+<p>Un des gros avantages d'une liste est que vous pouvez appeler ses éléments par leur position. Ce numéro est appelé <strong>indice</strong> (ou <em>index</em>) de la liste.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>liste  : [&quot;girafe&quot;, &quot;tigre&quot;, &quot;singe&quot;, &quot;souris&quot;]
+indice :        0        1        2         3
+</code></pre></div>
+</td></tr></table>
+<p>Soyez très <strong>attentifs</strong> au fait que les indices d'une liste de <em>n</em> éléments commence à <em>0</em> et se termine à <em>n-1</em>. Voyez l'exemple suivant :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;girafe&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;tigre&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="s1">&#39;souris&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Par conséquent, si on appelle l'élément d'indice 4 de notre liste, Python renverra un message d'erreur :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">innermost</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="err">?</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</code></pre></div>
+</td></tr></table>
+<p>N'oubliez pas ceci ou vous risquez d'obtenir des bugs inattendus !</p>
+<h2 id="43-operation-sur-les-listes">4.3 Opération sur les listes</h2>
+<p>Tout comme les chaînes de caractères, les listes supportent l'opérateur <code>+</code> de concaténation, ainsi que l'opérateur <code>*</code> pour la duplication :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ani1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ani2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ani1</span> <span class="o">+</span> <span class="n">ani2</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ani1</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>L'opérateur <code>+</code> est très pratique pour concaténer deux listes.</p>
+<p>Vous pouvez aussi utiliser la méthode <code>.append()</code> lorsque vous souhaitez ajouter un seul élément à la fin d'une liste.</p>
+<p>Dans l'exemple suivant nous allons créer une liste vide :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">[]</span>
+</code></pre></div>
+</td></tr></table>
+<p>puis lui ajouter deux éléments, l'un après l'autre, d'abord avec la concaténation :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>puis avec la méthode <code>.append()</code> :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Dans l'exemple ci-dessus, nous ajoutons des éléments à une liste en utilisant l'opérateur de concaténation <code>+</code> ou la méthode <code>.append()</code>. Nous vous conseillons dans ce cas précis d'utiliser la méthode <code>.append()</code> dont la syntaxe est plus élégante.</p>
+<p>Nous reverrons en détail la méthode <code>.append()</code> dans le chapitre 11 <em>Plus sur les listes</em>.</p>
+<h2 id="44-indicage-negatif">4.4 Indiçage négatif</h2>
+<p>La liste peut également être indexée avec des nombres négatifs selon le modèle suivant :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>liste          : [&quot;girafe&quot;, &quot;tigre&quot;, &quot;singe&quot;, &quot;souris&quot;]
+indice positif :        0        1        2         3
+indice négatif :       -4       -3       -2        -1
+</code></pre></div>
+</td></tr></table>
+<p>ou encore :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>liste          : [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;]
+indice positif :   0    1    2    3    4    5
+indice négatif :  -6   -5   -4   -3   -2   -1
+</code></pre></div>
+</td></tr></table>
+<p>Les indices négatifs reviennent à compter à partir de la fin. Leur principal avantage est que vous pouvez accéder au dernier élément d'une liste à l'aide de l'indice <code>-1</code> sans pour autant connaître la longueur de cette liste. L'avant-dernier élément a lui l'indice <code>-2</code>, l'avant-avant dernier l'indice <code>-3</code>, etc.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;souris&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="s1">&#39;singe&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Pour accéder au premier élément de la liste avec un indice négatif, il faut par contre connaître le bon indice :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="s1">&#39;girafe&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Dans ce cas, on utilise plutôt <code>animaux[0]</code>.</p>
+<h2 id="45-tranches">4.5 Tranches</h2>
+<p>Un autre avantage des listes est la possibilité de sélectionner une partie d'une liste en utilisant un indiçage construit sur le modèle <code>[m:n+1]</code> pour récupérer tous les éléments, du émième au énième (de l'élément <code>m</code> inclus à l'élément <code>n+1</code> exclu). On dit alors qu'on récupère une <strong>tranche</strong> de la liste, par exemple :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[:]</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="p">[</span><span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="s1">&#39;souris&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Notez que lorsqu'aucun indice n'est indiqué à gauche ou à droite du symbole deux-points, Python prend par défaut tous les éléments depuis le début ou tous les éléments jusqu'à la fin respectivement.</p>
+<p>On peut aussi préciser le pas en ajoutant un symbole deux-points supplémentaire et en indiquant le pas par un entier.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="s1">&#39;singe&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[::</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Finalement, on se rend compte que l'accès au contenu d'une liste fonctionne sur le modèle <code>liste[début:fin:pas]</code>.</p>
+<h2 id="46-fonction-len">4.6 Fonction <code>len()</code></h2>
+<p>L'instruction <code>len()</code> vous permet de connaître la longueur d'une liste, c'est-à-dire le nombre d'éléments que contient la liste. Voici un exemple d'utilisation :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">animaux</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="s2">&quot;souris&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">animaux</span><span class="p">)</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="mi">8</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="47-les-fonctions-range-et-list">4.7 Les fonctions <code>range()</code> et <code>list()</code></h2>
+<p>L'instruction <code>range()</code> est une fonction spéciale en Python qui  génère des nombres entiers compris dans un intervalle. Lorsqu'elle est utilisée en combinaison avec la fonction <code>list()</code>, on obtient une liste d'entiers. Par exemple :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>La commande <code>list(range(10))</code> a généré une liste contenant tous les nombres entiers de 0 inclus à 10 <strong>exclu</strong>. Nous verrons l'utilisation de la fonction <code>range()</code> toute seule dans le chapitre 5 <em>Boucles et comparaisons</em>.</p>
+<p>Dans l'exemple ci-dessus, la fonction <code>range()</code> a pris un argument, mais elle peut également prendre deux ou trois arguments, voyez plutôt :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">800</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>L'instruction <code>range()</code> fonctionne sur le modèle <code>range([début,] fin[, pas])</code>. Les arguments entre crochets sont optionnels. Pour obtenir une liste de nombres entiers, il faut l'utiliser systématiquement avec la fonction <code>list()</code>.</p>
+<p>Enfin, prenez garde aux arguments optionnels par défaut (<code>0</code> pour <code>début</code> et <code>1</code> pour <code>pas</code>) :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="p">[]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Ici la liste est vide car Python a pris la valeur du pas par défaut qui est de 1. Ainsi, si on commence à 10 et qu'on avance par pas de 1, on ne pourra jamais atteindre 0. Python génère ainsi une liste vide. Pour éviter ça, il faudrait, par exemple, préciser un pas de -1 pour obtenir une liste d'entiers décroissants :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="48-listes-de-listes">4.8 Listes de listes</h2>
+<p>Pour finir, sachez qu'il est tout à fait possible de construire des listes de listes. Cette fonctionnalité peut parfois être très pratique. Par exemple :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">enclos1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;girafe&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">enclos2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tigre&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">enclos3</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;singe&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span><span class="n">enclos1</span><span class="p">,</span> <span class="n">enclos2</span><span class="p">,</span> <span class="n">enclos3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">zoo</span>
+<span class="p">[[</span><span class="s1">&#39;girafe&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;singe&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Dans cet exemple, chaque sous-liste contient une catégorie d'animal et le nombre d'animaux pour chaque catégorie.</p>
+<p>Pour accéder à un élément de la liste, on utilise l'indiçage habituel :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">zoo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;tigre&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Pour accéder à un élément de la sous-liste, on utilise un double indiçage :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">zoo</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;tigre&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">zoo</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">2</span>
+</code></pre></div>
+</td></tr></table>
+<p>On verra un peu plus loin qu'il existe en Python des dictionnaires qui sont également très pratiques pour stocker de l'information structurée. On verra aussi qu'il existe un module nommé <em>NumPy</em> qui permet de créer des listes ou des tableaux de nombres (vecteurs et matrices) et de les manipuler.</p>
+<h2 id="49-minimum-maximum-et-somme-dune-liste">4.9 Minimum, maximum et somme d'une liste</h2>
+<p>Les fonctions <code>min()</code>, <code>max()</code> et <code>sum()</code> renvoient respectivement le minimum, le maximum et la somme d'une liste passée en argument.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">liste</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="mi">45</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="mi">9</span>
+</code></pre></div>
+</td></tr></table>
+<p>Même si en théorie ces fonctions peuvent prendre en argument une liste de <em>strings</em>, on les utilisera la plupart du temps avec des types numériques (liste d'entiers et / ou de <em>floats</em>). </p>
+<p>Nous avions déjà croisé <code>min()</code>, <code>max()</code> dans le chapitre 2 <em>Variables</em>. On avait vu que ces deux fonctions pouvaient prendre plusieurs arguments entiers et / ou <em>floats</em>, par exemple :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">3</span>
+</code></pre></div>
+</td></tr></table>
+<p>Attention toutefois à ne pas mélanger entiers et <em>floats</em> d'une part avec une liste d'autre part, car cela renvoie une erreur :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;list&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Soit on passe plusieurs entiers et / ou <em>floats</em> en argument, soit on passe une liste unique.</p>
+<h2 id="410-exercices">4.10 Exercices</h2>
+<p><em>Conseil</em> : utilisez l'interpréteur Python.</p>
+<h3 id="4101-jours-de-la-semaine">4.10.1 Jours de la semaine</h3>
+<p>Constituez une liste <code>semaine</code> contenant les 7 jours de la semaine.</p>
+<ol>
+<li>À partir de cette liste, comment récupérez-vous seulement les 5 premiers jours de la semaine d'une part, et ceux du week-end d'autre part ? Utilisez pour cela l'indiçage.</li>
+<li>Cherchez un autre moyen pour arriver au même résultat (<em>en utilisant un autre indiçage</em>).</li>
+<li>Trouvez deux manières pour accéder au dernier jour de la semaine.</li>
+<li>Inversez les jours de la semaine en une commande.</li>
+</ol>
+<h3 id="4102-saisons">4.10.2 Saisons</h3>
+<p>Créez 4 listes <code>hiver</code>, <code>printemps</code>, <code>ete</code> et <code>automne</code> contenant les mois correspondants à ces saisons. Créez ensuite une liste <code>saisons</code> contenant les listes <code>hiver</code>, <code>printemps</code>, <code>ete</code> et <code>automne</code>. Prévoyez ce que renvoient les instructions suivantes, puis vérifiez-le dans l'interpréteur :</p>
+<ol>
+<li><code>saisons[2]</code></li>
+<li><code>saisons[1][0]</code></li>
+<li><code>saisons[1:2]</code></li>
+<li><code>saisons[:][1]</code>. Comment expliquez-vous ce dernier résultat ?</li>
+</ol>
+<h3 id="4103-table-de-multiplication-par-9">4.10.3 Table de multiplication par 9</h3>
+<p>Affichez la table de multiplication par 9 en une seule commande avec les instructions <code>range()</code> et <code>list()</code>.</p>
+<h3 id="4104-nombres-pairs">4.10.4 Nombres pairs</h3>
+<p>Répondez à la question suivante en une seule commande. Combien y a-t-il de nombres pairs dans l'intervalle <code>[2, 10000]</code> inclus ?</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03_affichage/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Précédent
+                </span>
+                3. Affichage
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05_boucles_comparaisons/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Suivant
+                </span>
+                5. Boucles et comparaisons
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Patrick Fuchs & Pierre Poulain. Cours sous licence Creative Commons Attribution - Partage à l'identique (CC BY-SA)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
